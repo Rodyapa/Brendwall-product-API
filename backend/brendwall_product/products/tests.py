@@ -28,7 +28,7 @@ class ProductAPITestCase(TestCase):
             'description': 'Awesome pasta Maccaroni',
             'price': MIN_PRODUCT_PRICE
         }
-        url = reverse('products:product-list-create')
+        url = reverse('products:product-create')
         counter_before_creation = Product.objects.filter(**valid_data).count()
 
         # Act
@@ -51,7 +51,7 @@ class ProductAPITestCase(TestCase):
 
         # Arrange
         counter_before_creation = Product.objects.all().count()
-        url = reverse('products:product-list-create')
+        url = reverse('products:product-create')
         test_cases = [
             ('missing title', {
                 'description': 'Awesome pasta Maccaroni',
@@ -115,7 +115,7 @@ class ProductAPITestCase(TestCase):
     def test_getting_product_list(self):
         '''Test the ability to retrieve the product list.'''
         # Arrange
-        url = reverse('products:product-list-create')
+        url = reverse('products:product-list')
         Product.objects.bulk_create(
             [
                 Product(title='Papaya', description='fruit',
