@@ -1,7 +1,6 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import CreateModelMixin, ListModelMixin
 from products.models import Product
-from products.forms import ProductForm
 from products.serializers import ProductSerializer
 from django.views.generic import ListView
 

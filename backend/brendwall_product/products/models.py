@@ -1,7 +1,7 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
-from products.validators import TitleValidator, TextValidator
-from products.constants import MIN_PRODUCT_PRICE, MAX_PRODUCT_PRICE
+from products.constants import MAX_PRODUCT_PRICE, MIN_PRODUCT_PRICE
+from products.validators import TextValidator, TitleValidator
 
 
 class Product(models.Model):

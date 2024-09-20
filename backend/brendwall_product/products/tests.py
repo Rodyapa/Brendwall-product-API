@@ -1,8 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
+from products.constants import MAX_PRODUCT_PRICE, MIN_PRODUCT_PRICE
 from products.models import Product
-from products.constants import MIN_PRODUCT_PRICE, MAX_PRODUCT_PRICE
-
 
 '''
 These tests do not check the internal workings of the ORM model.
