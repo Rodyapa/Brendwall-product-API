@@ -2,25 +2,27 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import CreateModelMixin, ListModelMixin
 from products.models import Product
 from products.serializers import ProductSerializer
+from rest_framework.response import Response
+from rest_framework import viewsets
+from rest_framework import status
 from django.views.generic import ListView
 
 
-class ProductAPIView(CreateModelMixin,
-                     ListModelMixin,
-                     GenericAPIView):
+class ProductViewSet(viewsets.ViewSet):
     """
-    View that process POST and GET API requests to products api endpoints.
+    View Set that process POST and GET API requests to products api endpoints.
     """
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+    def list(self, request):
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
 
-    # ListModelMixin's list() for GET
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    # CreateModelMixin's create() for POST
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+    def create(self, request):
+        serializer = ProductSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class IndexView(ListView):
