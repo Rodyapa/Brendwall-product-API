@@ -3,8 +3,8 @@
 Документация API эндпоинтов Бекенда. https://product-api.risetime.ru/api/schema/
 
 ## Endpoints
-/api/products/add/ - Добавление продукта
-/api/products/list/ - Список продуктов
+* /api/products/add/ - Добавление продукта
+* /api/products/list/ - Список продуктов
 ## Просмотр проекта на локальной машине:
 Склонировать репозиторий на локальную машину:
 ```
