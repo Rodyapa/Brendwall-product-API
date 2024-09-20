@@ -2,7 +2,7 @@ from django.core.validators import RegexValidator
 
 
 class TitleValidator(RegexValidator):
-    regex = r"^[A-zА-я0-9-\s]+$"
+    regex = r"^[,.:;?!A-zА-я0-9-\s]+$"
     message = ("В названии продукта допустимы: "
                "кириллица и латинские символы, "
                "арабские цифры, пробел, а также дефис.")
