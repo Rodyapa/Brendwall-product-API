@@ -1,11 +1,8 @@
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import CreateModelMixin, ListModelMixin
+from django.views.generic import ListView
 from products.models import Product
 from products.serializers import ProductSerializer
+from rest_framework import status, viewsets
 from rest_framework.response import Response
-from rest_framework import viewsets
-from rest_framework import status
-from django.views.generic import ListView
 
 
 class ProductViewSet(viewsets.ViewSet):

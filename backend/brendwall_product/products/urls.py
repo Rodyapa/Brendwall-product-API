@@ -1,9 +1,7 @@
-from django.urls import path, include
-from products.views import IndexView
-from products.views import ProductViewSet
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.urls import path
+from products.views import IndexView, ProductViewSet
 
 app_name = 'products'
 
@@ -15,4 +13,7 @@ urlpatterns = [
          ProductViewSet.as_view({'post': 'create'}), name='product-create'),
 ]
 if settings.DEBUG is True:
-    urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns + static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+    )
