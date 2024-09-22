@@ -1,5 +1,5 @@
 # Brendwall-product-API (Тестовое задание)
-Код на сайте: https://product-api.risetime.ru
+Реализация доступна на сайте: https://product-api.risetime.ru
 Документация API эндпоинтов Бекенда. https://product-api.risetime.ru/api/schema/
 
 ## Endpoints
