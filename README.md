@@ -10,26 +10,36 @@
 ```
 git clone git@github.com:Rodyapa/Brendwall-product-API.git
 ```
+Перейти в директорию с кодом бекенда
+```
+cd Brendwall-product-API/backend
+```
 Создать виртуальное окружение
 ```
-python -m vevn venv 
+python3 -m vevn venv 
 ```
 Активировать виртуальное окружение
 ```
 source venv/bin/activate
 ```
+Установить пакетный менеджер Poetry: https://python-poetry.org/docs/
 Установить зависимости
 ```
-poetry install
+poetry install 
+```
+Или установите зависимости с помощью pip
+```
+pip install -r requirements.txt
+```
 ```
 Собрать статику
 ```
-python manage.py collectstatic
+python brendwall_product/manage.py collectstatic
 ```
 Провести миграции
 ```
-python manage.py makemigrations
-python manage.py migrate
+python brendwall_product/manage.py makemigrations
+python brendwall_product/manage.py migrate
 ```
 Запустить локальный сервер
 ```
